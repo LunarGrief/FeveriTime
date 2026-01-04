@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeveriTIme - Донат магазин</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="server-info">
+                <h1 class="server-name">FEVERITIME</h1>
+                <div class="server-details">
+                    <span class="server-ip">f1.rustix.me:27852</span>
+                    <span class="server-status online">ОНЛАЙН</span>
+                    <span class="server-version">Версия 1.16.5</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="advantages">
+                <h2>Преимущества нашего сервера</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🛡️</div>
+                        <h3>Без читеров</h3>
+                        <p>Надежная защита от читов и постоянный мониторинг игры</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">👮</div>
+                        <h3>Хорошая администрация</h3>
+                        <p>Опытные и добрые админы, всегда готовые помочь</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">😊</div>
+                        <h3>Добрые игроки</h3>
+                        <p>Дружелюбное комьюнити и приятная атмосфера</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="donate-shop">
+                <h2 class="shop-title">Выберите донат-пакет</h2>
+                <div class="packages-grid">
+                    <div class="package-card" data-package="baron" data-price="9">
+                        <div class="package-header">
+                            <h3 class="package-name">Барон</h3>
+                            <div class="package-price">9 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Базовые привилегии</li>
+                                <li>✓ /fly</li>
+                                <li>✓ /god</li>
+                                <li>✓ Приватный чат</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Барон', 9)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="strazh" data-price="15">
+                        <div class="package-header">
+                            <h3 class="package-name">Страж</h3>
+                            <div class="package-price">15 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Барона</li>
+                                <li>✓ /tp</li>
+                                <li>✓ /speed</li>
+                                <li>✓ Дополнительные слоты</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Страж', 15)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="geroy" data-price="20">
+                        <div class="package-header">
+                            <h3 class="package-name">Герой</h3>
+                            <div class="package-price">20 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Стража</li>
+                                <li>✓ /heal</li>
+                                <li>✓ /feed</li>
+                                <li>✓ Креатив в некоторых мирах</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Герой', 20)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="aspid" data-price="25">
+                        <div class="package-header">
+                            <h3 class="package-name">Аспид</h3>
+                            <div class="package-price">25 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Героя</li>
+                                <li>✓ /weather</li>
+                                <li>✓ /time</li>
+                                <li>✓ Уникальный префикс</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Аспид', 25)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="skvid" data-price="34">
+                        <div class="package-header">
+                            <h3 class="package-name">Сквид</h3>
+                            <div class="package-price">34 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Аспида</li>
+                                <li>✓ /kick</li>
+                                <li>✓ /mute</li>
+                                <li>✓ Ваншил раз в неделю</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Сквид', 34)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="glava" data-price="45">
+                        <div class="package-header">
+                            <h3 class="package-name">Глава</h3>
+                            <div class="package-price">45 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Сквида</li>
+                                <li>✓ /ban</li>
+                                <li>✓ /unban</li>
+                                <li>✓ Полный доступ к командам</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Глава', 45)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="elita" data-price="49">
+                        <div class="package-header">
+                            <h3 class="package-name">Элита</h3>
+                            <div class="package-price">49 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Главы</li>
+                                <li>✓ /op</li>
+                                <li>✓ /gamemode</li>
+                                <li>✓ Эксклюзивные скины</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Элита', 49)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="titan" data-price="79">
+                        <div class="package-header">
+                            <h3 class="package-name">Титан</h3>
+                            <div class="package-price">79 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Элиты</li>
+                                <li>✓ /give</li>
+                                <li>✓ /enchant</li>
+                                <li>✓ VIP статус на форуме</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Титан', 79)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="prince" data-price="99">
+                        <div class="package-header">
+                            <h3 class="package-name">Принц</h3>
+                            <div class="package-price">99 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Титана</li>
+                                <li>✓ /spawnmob</li>
+                                <li>✓ Бесконечные блоки</li>
+                                <li>✓ Личный мир</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Принц', 99)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="knyaz" data-price="149">
+                        <div class="package-header">
+                            <h3 class="package-name">Князь</h3>
+                            <div class="package-price">149 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Принца</li>
+                                <li>✓ /worldedit</li>
+                                <li>✓ /plugman</li>
+                                <li>✓ Админские права</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Князь', 149)">Купить</button>
+                    </div>
+
+                    <div class="package-card" data-package="gercog" data-price="279">
+                        <div class="package-header">
+                            <h3 class="package-name">Герцог</h3>
+                            <div class="package-price">279 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Все привилегии Князя</li>
+                                <li>✓ Полный контроль сервером</li>
+                                <li>✓ /reload</li>
+                                <li>✓ Вечная привилегия</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn" onclick="selectPackage('Герцог', 279)">Купить</button>
+                    </div>
+
+                    <div class="package-card premium" data-package="sponsor" data-price="379">
+                        <div class="package-header">
+                            <h3 class="package-name">Спонсор</h3>
+                            <div class="package-price">379 ₽</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ ВСЕ ПРИВИЛЕГИИ</li>
+                                <li>✓ СОАВТОР СЕРВЕРА</li>
+                                <li>✓ БЕСКОНЕЧНЫЕ ВОЗМОЖНОСТИ</li>
+                                <li>✓ ЛИЧНЫЙ КАНАЛ СВЯЗИ</li>
+                            </ul>
+                        </div>
+                        <button class="buy-btn premium-btn" onclick="selectPackage('Спонсор', 379)">Купить</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Подтверждение покупки</h2>
+            <div class="purchase-info">
+                <p>Пакет: <span id="selectedPackage"></span></p>
+                <p>Цена: <span id="selectedPrice"></span> ₽</p>
+            </div>
+            <div class="payment-methods">
+                <h3>Способ оплаты:</h3>
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment" value="card" checked>
+                        <span>Банковская карта</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="qiwi">
+                        <span>QIWI</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="yoomoney">
+                        <span>ЮMoney</span>
+                    </label>
+                </div>
+            </div>
+            <div class="nickname-input">
+                <label for="nickname">Ваш ник в Minecraft:</label>
+                <input type="text" id="nickname" placeholder="Введите ник..." required>
+            </div>
+            <div class="modal-buttons">
+                <button class="confirm-btn" onclick="confirmPurchase()">Подтвердить покупку</button>
+                <button class="cancel-btn" onclick="closeModal()">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FeveriTIme. Все права защищены.</p>
+            <p>Поддержка: support@fevertime.me</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
